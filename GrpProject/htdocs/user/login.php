@@ -1,6 +1,9 @@
 <?php
 include "../connection.php";
 
+// Set the content type to JSON
+header('Content-Type: application/json');
+
 // Prepare the statement to prevent SQL injection
 $usernameEmail = $_POST["usernameEmail"];
 $password = $_POST['password'];

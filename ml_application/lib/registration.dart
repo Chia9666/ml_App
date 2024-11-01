@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, unnecessary_brace_in_string_interps, use_build_context_synchronously
 
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:grasg/api_connection/api_connection.dart';
+import 'package:ml_application/api_connection/api_connection.dart';
 
 class RegistrationPage extends StatefulWidget {
   const RegistrationPage({super.key});
