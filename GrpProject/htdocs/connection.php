@@ -1,5 +1,5 @@
 git <?php
-    # change the $db_user, $db_password to your own setup in xampp
+    # change the $db_user, $db_password to your own setup in xampp 2nd acc test
     $serverHost = "localhost";
     $user = "root";
     $password = "root";
