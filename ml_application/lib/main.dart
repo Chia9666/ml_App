@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:grasg/homepage.dart';
-import 'package:grasg/login.dart';
-import 'package:grasg/registration.dart';
+import 'package:ml_application/homepage.dart';
+import 'package:ml_application/login.dart';
+import 'package:ml_application/registration.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
