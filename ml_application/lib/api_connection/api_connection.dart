@@ -1,10 +1,10 @@
 class API {
-  static const hostConnect = "http://192.168.176.44/server_api";
+  static const hostConnect = "http://192.168.50.14/ml_server_api";
 
 // registration
   static const validateEmail = "$hostConnect/user/email_validator.php";
-  static const signUp = "$hostConnect/user/signup.php";
+  static const signUp = "$hostConnect/user/sign_up.php";
 
 // login
-  static const login = "$hostConnect/users_api/login.php";
+  static const login = "$hostConnect/users/login.php";
 }
