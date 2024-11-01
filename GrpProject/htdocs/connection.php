@@ -1,5 +1,5 @@
 git <?php
-    # change the $db_user, $db_password to your own set up
+    # change the $db_user, $db_password to your own xampp setup
     $serverHost = "localhost";
     $user = "root";
     $password = "root";
