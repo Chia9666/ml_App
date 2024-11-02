@@ -23,10 +23,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: FutureBuilder(
         future: _isLoggedIn(),
-        builder: (context, snapshot) {
+        builder: (context, snapshot) 
+          // display a loading screen with a scaffold
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return CircularProgressIndicator();
-          } else if (snapshot.hasData && snapshot.data == true) {
+            return Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          } // show homepage if logged in, else login page else if (snapshot.hasData && snapshot.data == true) {
             return HomePage();
           } else {
             return LoginPage();
