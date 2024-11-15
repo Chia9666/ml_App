@@ -1,15 +1,14 @@
 <?php
 include "../connection.php";
 
-// Set the content type to JSON
-header('Content-Type: application/json');
+// header('Content-Type: application/json');
 
 // Prepare the statement to prevent SQL injection
 $usernameEmail = $_POST["usernameEmail"];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 
 // Log the received credentials
-error_log("Received Username/Email: $usernameEmail");
+// error_log("Received Username/Email: $usernameEmail");
 
 // Use prepared statement
 $stmt = $connect->prepare("SELECT * FROM users WHERE username = ? OR email = ?");
@@ -18,7 +17,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 // Check for query execution errors
-if ($result === false) {
+if ($result == false) {
     echo json_encode(['error' => 'Query failed: ' . $connect->error]);
     exit();
 }
@@ -28,10 +27,10 @@ if ($result->num_rows > 0) {
     $userRecord = $result->fetch_assoc();
 
     // Log the fetched user record
-    error_log("Fetched User Record: " . json_encode($userRecord));
+    //error_log("Fetched User Record: " . json_encode($userRecord));
 
     // Verify the password
-    if (password_verify($password, $userRecord['password'])) {
+    if ($password == $userRecord['password']) {
         // Generate new token on successful login
         $newToken = bin2hex(random_bytes(32));
 
